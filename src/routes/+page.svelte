@@ -1,6 +1,4 @@
-<div
-  class="min-h-screen flex flex-col items-center justify-center bg-black text-white select-none"
->
+<div class="min-h-screen flex flex-col items-center justify-center select-none">
   <p class="font-mono">
     welcome to <span class="text-accent font-semibold">ethen.app</span>
   </p>
