@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+:root {
+  --eda-accent: #fbbf24;
+}
+
+@theme {
+  --color-accent: var(--eda-accent);
+}
