@@ -9,13 +9,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # - uses: voidzero-dev/setup-vp@v1
-      #   with:
-      #     node-version: "24"
-      #     cache: true
-      #     pm: "npm" # firebase cli requires
+      - uses: voidzero-dev/setup-vp@v1
+        with:
+          node-version: "24"
+          cache: false # for firebase ci/cd
 
-      - run: npm install && npm build
+      - run: vp install && vp build
 
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
