@@ -13,6 +13,7 @@ jobs:
         with:
           node-version: "24"
           cache: true
+          pm: "npm" # firebase cli requires
 
       - run: vp install && vp build
 
