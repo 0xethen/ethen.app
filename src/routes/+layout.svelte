@@ -10,4 +10,6 @@
   <link rel="icon" href={favicon} />
 </svelte:head>
 
-{@render children()}
+<div class="min-h-screen flex flex-col items-center justify-center select-none">
+  {@render children()}
+</div>
