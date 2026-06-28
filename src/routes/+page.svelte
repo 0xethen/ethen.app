@@ -6,7 +6,7 @@
     </span><span>{"™"}</span>
   </p>
   <a
-    href="/creators/nfheat"
+    href="/creators"
     class="unstyled-link opacity-50 hover:underline hover:decoration-accent/80"
   >
     because the internet wasn't boring enough

@@ -10,7 +10,7 @@
       >/ ethen</a
     >
   </h1>
-  <nav>
+  <nav class="hidden sm:inline">
     <a href="/creators/nfheat" class="">NFHEAT</a>
     &bull;
     <a href="/creators/poppa" class="">Poppa E's Kitchen</a>
