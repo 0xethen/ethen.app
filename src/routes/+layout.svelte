@@ -12,4 +12,8 @@
 
 <div class="">
   {@render children()}
+  <p class="hidden">
+    Your adblocker may be blocking some content. Please disable your adblocker
+    and go through the main page (https://ethen.app/). We don't show ads!
+  </p>
 </div>
