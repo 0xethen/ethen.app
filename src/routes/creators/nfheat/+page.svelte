@@ -25,17 +25,62 @@
     </p>
     <p>
       NFHEAT is a music producer, composer, and lyrisist. His traction strategy
-      is music over <a href="https://www.instagram.com/p/DWh5ehnCErh/"
-        >gameplay videos</a
+      consists of <a href="https://www.instagram.com/p/DWh5ehnCErh/"
+        >music over gameplay videos</a
       >
-      or
+      and
       <a href="https://www.instagram.com/p/DWec67ACNSU/">motion graphic edits</a
       >
-      in the online space. NFHEAT also helps to
+      in the online space, as well as "thumbnails" (covers to imaginary YouTube videos
+      that only serve as reactions in text messaging, a pop-culture phenomenom). NFHEAT
+      also helps to
       <a href="https://www.tiktok.com/@vizl__/video/7641776787676024078"
         >produce videos</a
-      > with his music and/or likeness.
+      > containing his music and/or likeness.
     </p>
+  </div>
+
+  <div class="flex flex-row gap-4 items-center">
+    <div class="space-y-0.5">
+      <h1 class="font-bold text-2xl">Socials</h1>
+      <p class="text-white/90">(not a comprehensive list)</p>
+    </div>
+
+    <div
+      class="p-2 bg-pink-950 rounded-md flex flex-col gap-2 items-center justify-center text-center"
+    >
+      <img
+        src="/creator-assets/nfheat/nfheat-igl.jpg"
+        class="size-10 rounded-full"
+        alt="NFHEAT Instagram profile"
+      />
+      <div class="space-y-0.5">
+        <a
+          href="https://www.x.com/nfheat/"
+          class="unstyled-link text-lg font-semibold hover:underline hover:decoration-accent/80"
+          >@nfheat1</a
+        >
+        <p class="text-sm text-gray-400">Instagram</p>
+      </div>
+    </div>
+
+    <div
+      class="p-2 bg-sky-950 rounded-md flex flex-col gap-2 items-center justify-center text-center"
+    >
+      <img
+        src="/creator-assets/nfheat/nfheatstudios-nfheatmusic.png"
+        class="size-10 rounded-full"
+        alt="NFHEAT Studios / NFHEAT Music logo"
+      />
+      <div class="space-y-0.5">
+        <a
+          href="https://www.instagram.com/nfheat1/"
+          class="unstyled-link text-lg font-semibold hover:underline hover:decoration-accent/80"
+          >@nfheat</a
+        >
+        <p class="text-sm text-gray-400">X / Twitter</p>
+      </div>
+    </div>
   </div>
 
   <hr class="text-amber-900" />
