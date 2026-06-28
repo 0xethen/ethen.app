@@ -5,12 +5,12 @@
       <span contenteditable="true">ethen</span>.app
     </span><span>{"™"}</span>
   </p>
-  <a
+  <!-- <a
     href="/secret"
     class="unstyled-link opacity-50 hover:underline hover:decoration-accent/80"
   >
     because the internet wasn't boring enough
-  </a>
+  </a> -->
   <p>
     creators //
     <a

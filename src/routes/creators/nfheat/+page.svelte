@@ -44,8 +44,10 @@
 
     <hr class="text-amber-900" />
 
-    <div class="flex flex-row gap-5 items-center justify-between">
-      <div class="space-y-0.5 max-w-48">
+    <div
+      class="flex flex-row gap-5 items-center justify-center sm:justify-between"
+    >
+      <div class="hidden sm:inline space-y-0.5 max-w-48">
         <h1 class="font-bold text-2xl">Socials and other links</h1>
         <p class="text-white/90">(not a comprehensive list)</p>
       </div>
