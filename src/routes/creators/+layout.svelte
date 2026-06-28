@@ -6,7 +6,7 @@
   class="flex items-center justify-between p-4 bg-amber-950 text-white select-none"
 >
   <h1 class="text-xl font-bold">
-    Our Creators <a class="unstyled-link font-light text-white/80" href="/"
+    Creative <a class="unstyled-link font-light text-white/80" href="/"
       >/ ethen</a
     >
   </h1>

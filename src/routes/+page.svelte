@@ -6,9 +6,25 @@
     </span><span>{"™"}</span>
   </p>
   <a
-    href="/creators"
+    href="/secret"
     class="unstyled-link opacity-50 hover:underline hover:decoration-accent/80"
   >
     because the internet wasn't boring enough
   </a>
+  <p>
+    creators //
+    <a
+      href="/creators/nfheat"
+      class="unstyled-link opacity-50 hover:underline hover:decoration-accent/80"
+    >
+      NFHEAT
+    </a>
+    <span class="opacity-50">&bull;</span>
+    <a
+      href="/creators/poppa"
+      class="unstyled-link opacity-50 hover:underline hover:decoration-accent/80"
+    >
+      Poppa E's Kitchen
+    </a>
+  </p>
 </div>

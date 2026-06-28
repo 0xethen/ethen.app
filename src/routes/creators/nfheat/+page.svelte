@@ -42,45 +42,49 @@
       </p>
     </div>
 
-    <div class="flex flex-row gap-4 items-center">
-      <div class="space-y-0.5">
-        <h1 class="font-bold text-2xl">Socials</h1>
+    <hr class="text-amber-900" />
+
+    <div class="flex flex-row gap-5 items-center justify-between">
+      <div class="space-y-0.5 max-w-48">
+        <h1 class="font-bold text-2xl">Socials and other links</h1>
         <p class="text-white/90">(not a comprehensive list)</p>
       </div>
 
-      <div
-        class="p-2 bg-pink-950 rounded-md flex flex-col gap-2 items-center justify-center text-center"
-      >
-        <img
-          src="/creator-assets/nfheat/nfheat-igl.jpg"
-          class="size-10 rounded-full"
-          alt="NFHEAT Instagram profile"
-        />
-        <div class="space-y-0.5">
-          <a
-            href="https://instagram.com/nfheat1/"
-            class="unstyled-link text-lg font-semibold hover:underline hover:decoration-accent/80"
-            >@nfheat1</a
-          >
-          <p class="text-sm text-gray-400">Instagram</p>
+      <div class="flex flex-row gap-2">
+        <div
+          class="p-2 bg-pink-950 rounded-md flex flex-col gap-2 items-center justify-center text-center"
+        >
+          <img
+            src="/creator-assets/nfheat/nfheat-igl.jpg"
+            class="size-10 rounded-full"
+            alt="NFHEAT Instagram profile"
+          />
+          <div class="space-y-0.5">
+            <a
+              href="https://instagram.com/nfheat1/"
+              class="unstyled-link text-lg font-semibold hover:underline hover:decoration-accent/80"
+              >@nfheat1</a
+            >
+            <p class="text-sm text-gray-400">Instagram</p>
+          </div>
         </div>
-      </div>
 
-      <div
-        class="p-2 bg-sky-950 rounded-md flex flex-col gap-2 items-center justify-center text-center"
-      >
-        <img
-          src="/creator-assets/nfheat/nfheatstudios-nfheatmusic.png"
-          class="size-10 rounded-full"
-          alt="NFHEAT Studios / NFHEAT Music logo"
-        />
-        <div class="space-y-0.5">
-          <a
-            href="https://x.com/nfheat/"
-            class="unstyled-link text-lg font-semibold hover:underline hover:decoration-accent/80"
-            >@nfheat</a
-          >
-          <p class="text-sm text-gray-400">X / Twitter</p>
+        <div
+          class="p-2 bg-sky-950 rounded-md flex flex-col gap-2 items-center justify-center text-center"
+        >
+          <img
+            src="/creator-assets/nfheat/nfheatstudios-nfheatmusic.png"
+            class="size-10 rounded-full"
+            alt="NFHEAT Studios / NFHEAT Music logo"
+          />
+          <div class="space-y-0.5">
+            <a
+              href="https://x.com/nfheat/"
+              class="unstyled-link text-lg font-semibold hover:underline hover:decoration-accent/80"
+              >@nfheat</a
+            >
+            <p class="text-sm text-gray-400">X / Twitter</p>
+          </div>
         </div>
       </div>
     </div>
