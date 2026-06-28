@@ -15,4 +15,7 @@
   * {
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-black focus-visible:ring-accent;
   }
+  a:not(.unstyled-link) {
+    @apply text-amber-500 underline underline-offset-1;
+  }
 }
