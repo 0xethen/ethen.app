@@ -21,12 +21,13 @@
         NFHEAT <span class="font-light text-3xl text-gray-700">@nfheat1</span>
       </h1>
       <p class="text-lg">
-        Nathan Forlemu, better known by his stage name "NFHEAT", is a music and
-        gaming brand.
+        Nathan Forlemu, better known by his stage name "NFHEAT", is a music
+        producer, composer, and lyricist
       </p>
       <p>
-        NFHEAT is a music producer, composer, and lyrisist. His traction
-        strategy consists of <a href="https://www.instagram.com/p/DWh5ehnCErh/"
+        NFHEAT Studios is a music and gaming brand. NFHEAT began his journey on
+        Instagram in March--his traction strategy consists of <a
+          href="https://www.instagram.com/p/DWh5ehnCErh/"
           >music over gameplay videos</a
         >
         and
