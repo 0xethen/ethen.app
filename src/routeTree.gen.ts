@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from "./routes/__root";
 import { Route as IndexRouteImport } from "./routes/index";
+import { Route as ConnectRouteImport } from "./routes/connect";
 import { Route as ProjectsRouteRouteImport } from "./routes/projects/route";
 import { Route as ProjectsIndexRouteImport } from "./routes/projects/index";
 import { Route as ProjectsHackgwinnettWebRouteImport } from "./routes/projects/hackgwinnett-web";
@@ -18,6 +19,11 @@ import { Route as ProjectsNotionCmsDemoRouteImport } from "./routes/projects/not
 const IndexRoute = IndexRouteImport.update({
   id: "/",
   path: "/",
+  getParentRoute: () => rootRouteImport,
+} as any);
+const ConnectRoute = ConnectRouteImport.update({
+  id: "/connect",
+  path: "/connect",
   getParentRoute: () => rootRouteImport,
 } as any);
 const ProjectsRouteRoute = ProjectsRouteRouteImport.update({
@@ -44,12 +50,14 @@ const ProjectsNotionCmsDemoRoute = ProjectsNotionCmsDemoRouteImport.update({
 export interface FileRoutesByFullPath {
   "/": typeof IndexRoute;
   "/projects": typeof ProjectsRouteRouteWithChildren;
+  "/connect": typeof ConnectRoute;
   "/projects/hackgwinnett-web": typeof ProjectsHackgwinnettWebRoute;
   "/projects/notion-cms-demo": typeof ProjectsNotionCmsDemoRoute;
   "/projects/": typeof ProjectsIndexRoute;
 }
 export interface FileRoutesByTo {
   "/": typeof IndexRoute;
+  "/connect": typeof ConnectRoute;
   "/projects/hackgwinnett-web": typeof ProjectsHackgwinnettWebRoute;
   "/projects/notion-cms-demo": typeof ProjectsNotionCmsDemoRoute;
   "/projects": typeof ProjectsIndexRoute;
@@ -58,6 +66,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport;
   "/": typeof IndexRoute;
   "/projects": typeof ProjectsRouteRouteWithChildren;
+  "/connect": typeof ConnectRoute;
   "/projects/hackgwinnett-web": typeof ProjectsHackgwinnettWebRoute;
   "/projects/notion-cms-demo": typeof ProjectsNotionCmsDemoRoute;
   "/projects/": typeof ProjectsIndexRoute;
@@ -67,15 +76,17 @@ export interface FileRouteTypes {
   fullPaths:
     | "/"
     | "/projects"
+    | "/connect"
     | "/projects/hackgwinnett-web"
     | "/projects/notion-cms-demo"
     | "/projects/";
   fileRoutesByTo: FileRoutesByTo;
-  to: "/" | "/projects/hackgwinnett-web" | "/projects/notion-cms-demo" | "/projects";
+  to: "/" | "/connect" | "/projects/hackgwinnett-web" | "/projects/notion-cms-demo" | "/projects";
   id:
     | "__root__"
     | "/"
     | "/projects"
+    | "/connect"
     | "/projects/hackgwinnett-web"
     | "/projects/notion-cms-demo"
     | "/projects/";
@@ -84,6 +95,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute;
   ProjectsRouteRoute: typeof ProjectsRouteRouteWithChildren;
+  ConnectRoute: typeof ConnectRoute;
 }
 
 declare module "@tanstack/react-router" {
@@ -93,6 +105,13 @@ declare module "@tanstack/react-router" {
       path: "/";
       fullPath: "/";
       preLoaderRoute: typeof IndexRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/connect": {
+      id: "/connect";
+      path: "/connect";
+      fullPath: "/connect";
+      preLoaderRoute: typeof ConnectRouteImport;
       parentRoute: typeof rootRouteImport;
     };
     "/projects": {
@@ -145,6 +164,7 @@ const ProjectsRouteRouteWithChildren = ProjectsRouteRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ProjectsRouteRoute: ProjectsRouteRouteWithChildren,
+  ConnectRoute: ConnectRoute,
 };
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
