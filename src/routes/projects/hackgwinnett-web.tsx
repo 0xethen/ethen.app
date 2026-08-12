@@ -36,6 +36,10 @@ function RouteComponent() {
         Check it out at hgm.ethen.app.{" "}
         <a href="https://hgm.ethen.app/posts/new-website-announcement">Read the announcement</a>
       </p>
+      <p>
+        Or dig through the{" "}
+        <a href="https://hgm.ethen.app/posts/new-website-announcement">source code</a> on my GitHub
+      </p>
     </div>
   );
 }
