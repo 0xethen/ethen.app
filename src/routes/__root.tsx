@@ -23,6 +23,11 @@ export const Route = createRootRoute({
         rel: "stylesheet",
         href: css,
       },
+      {
+        rel: "icon",
+        type: "image/svg+xml",
+        href: "/favicon.svg",
+      },
     ],
   }),
   shellComponent: RootDocument,

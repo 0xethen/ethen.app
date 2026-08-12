@@ -1,7 +1,7 @@
 import { Header } from "#/components/Header.tsx";
 import { createFileRoute, Outlet } from "@tanstack/react-router";
 
-export const Route = createFileRoute("/projects")({
+export const Route = createFileRoute("/old")({
   component: RouteComponent,
 });
 
