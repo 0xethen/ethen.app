@@ -6,10 +6,10 @@ export const Route = createFileRoute("/projects/")({
 });
 
 const messages = [
-  "your heart tells you to",
-  "you need to mend the small, ethen-shaped hole in your soul",
+  "your soul tells you to",
+  "you need to mend the small, ethen-shaped hole in your heart",
   "you feel like it",
-  "you get that itch for more",
+  "you get that itch to find more interesting stuff",
   "ever",
 ];
 
@@ -21,7 +21,7 @@ function RouteComponent() {
       <Route.Link to="hackgwinnett-web">HackGwinnett Marketing website</Route.Link>
       <Route.Link to="notion-cms-demo">Notion CMS demo</Route.Link>
       <p className="text-sm text-muted-fg">
-        I'm working on a lot more right now. Check back when {msg}
+        I'm working on a lot more right now. come back when {msg}
       </p>
     </div>
   );

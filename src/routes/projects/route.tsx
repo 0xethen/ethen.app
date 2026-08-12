@@ -10,7 +10,9 @@ function RouteComponent() {
     <div className="p-8">
       <Header />
       <hr className="my-2" />
-      <Outlet />
+      <div>
+        <Outlet />
+      </div>
     </div>
   );
 }
