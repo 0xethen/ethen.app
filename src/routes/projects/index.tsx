@@ -6,7 +6,7 @@ export const Route = createFileRoute("/projects/")({
 
 function RouteComponent() {
   return (
-    <div>
+    <div className="flex flex-col gap-2">
       <Route.Link to="hackgwinnett-web">HackGwinnett Marketing website</Route.Link>
       <Route.Link to="notion-cms-demo">Notion CMS demo</Route.Link>
     </div>
