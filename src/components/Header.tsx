@@ -8,17 +8,24 @@ export function Header() {
       </Link>
       <Link
         to="/projects"
-        activeProps={{ className: "text-foreground" }}
+        activeProps={{ className: "text-fg" }}
         inactiveProps={{ className: "text-muted-fg" }}
       >
         projects
       </Link>
+      <a
+        href="https://toybox.ethen.app"
+        className="cursor-not-allowed text-muted-fg decoration-muted-fg/50 opacity-50"
+        onClick={(e) => e.preventDefault()}
+      >
+        toybox
+      </a>
       <Link
         to="/old"
-        activeProps={{ className: "text-foreground" }}
+        activeProps={{ className: "text-fg" }}
         inactiveProps={{ className: "text-muted-fg" }}
       >
-        old.ethen.app
+        old ethen.app
       </Link>
     </div>
   );

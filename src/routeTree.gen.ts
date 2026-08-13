@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ConnectRouteImport } from './routes/connect'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as OldRouteRouteImport } from './routes/old/route'
 import { Route as ProjectsRouteRouteImport } from './routes/projects/route'
 import { Route as OldIndexRouteImport } from './routes/old/index'
@@ -26,6 +27,11 @@ const IndexRoute = IndexRouteImport.update({
 const ConnectRoute = ConnectRouteImport.update({
   id: '/connect',
   path: '/connect',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OldRouteRoute = OldRouteRouteImport.update({
@@ -64,6 +70,7 @@ export interface FileRoutesByFullPath {
   '/old': typeof OldRouteRouteWithChildren
   '/projects': typeof ProjectsRouteRouteWithChildren
   '/connect': typeof ConnectRoute
+  '/contact': typeof ContactRoute
   '/projects/hackgwinnett-web': typeof ProjectsHackgwinnettWebRoute
   '/projects/notion-cms-demo': typeof ProjectsNotionCmsDemoRoute
   '/old/': typeof OldIndexRoute
@@ -72,6 +79,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/connect': typeof ConnectRoute
+  '/contact': typeof ContactRoute
   '/projects/hackgwinnett-web': typeof ProjectsHackgwinnettWebRoute
   '/projects/notion-cms-demo': typeof ProjectsNotionCmsDemoRoute
   '/old': typeof OldIndexRoute
@@ -83,6 +91,7 @@ export interface FileRoutesById {
   '/old': typeof OldRouteRouteWithChildren
   '/projects': typeof ProjectsRouteRouteWithChildren
   '/connect': typeof ConnectRoute
+  '/contact': typeof ContactRoute
   '/projects/hackgwinnett-web': typeof ProjectsHackgwinnettWebRoute
   '/projects/notion-cms-demo': typeof ProjectsNotionCmsDemoRoute
   '/old/': typeof OldIndexRoute
@@ -95,6 +104,7 @@ export interface FileRouteTypes {
     | '/old'
     | '/projects'
     | '/connect'
+    | '/contact'
     | '/projects/hackgwinnett-web'
     | '/projects/notion-cms-demo'
     | '/old/'
@@ -103,6 +113,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/connect'
+    | '/contact'
     | '/projects/hackgwinnett-web'
     | '/projects/notion-cms-demo'
     | '/old'
@@ -113,6 +124,7 @@ export interface FileRouteTypes {
     | '/old'
     | '/projects'
     | '/connect'
+    | '/contact'
     | '/projects/hackgwinnett-web'
     | '/projects/notion-cms-demo'
     | '/old/'
@@ -124,6 +136,7 @@ export interface RootRouteChildren {
   OldRouteRoute: typeof OldRouteRouteWithChildren
   ProjectsRouteRoute: typeof ProjectsRouteRouteWithChildren
   ConnectRoute: typeof ConnectRoute
+  ContactRoute: typeof ContactRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -140,6 +153,13 @@ declare module '@tanstack/react-router' {
       path: '/connect'
       fullPath: '/connect'
       preLoaderRoute: typeof ConnectRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/old': {
@@ -220,6 +240,7 @@ const rootRouteChildren: RootRouteChildren = {
   OldRouteRoute: OldRouteRouteWithChildren,
   ProjectsRouteRoute: ProjectsRouteRouteWithChildren,
   ConnectRoute: ConnectRoute,
+  ContactRoute: ContactRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
