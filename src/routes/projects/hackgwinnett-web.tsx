@@ -37,8 +37,8 @@ function RouteComponent() {
         <a href="https://hgm.ethen.app/posts/new-website-announcement">Read the announcement</a>
       </p>
       <p>
-        Or dig through the{" "}
-        <a href="https://hgm.ethen.app/posts/new-website-announcement">source code</a> on my GitHub
+        Or dig through my{" "}
+        <a href="https://github.com/0xethen/hgm">source code</a> on GitHub
       </p>
     </div>
   );
