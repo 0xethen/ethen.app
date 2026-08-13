@@ -5,7 +5,7 @@ export const Route = createFileRoute("/")({ component: Home });
 function Home() {
   return (
     <div className="p-8 flex flex-col min-h-dvh gap-2 items-center justify-center text-center">
-      <h1 className="text-2xl font-medium">you are on ethen.app</h1>
+      <h1 className="text-2xl">you are on <span className="font-medium">ethen.app</span></h1>
       <p>
         <Route.Link to="/projects">projects</Route.Link>
         <span className="text-muted-fg">{" / "}</span>
