@@ -18,9 +18,9 @@ function RouteComponent() {
         </>
       </Route.Link>
       <p>
-        send me a message:{" "}
+        send me a message:{" "}
         <span className="font-mono">
-          contact{" "}[at]{" "}ethen.app
+          public{" "}[{" "}a{" "}t{" "}]{" "}ethen(dot)app
         </span>
       </p>
       <p>
