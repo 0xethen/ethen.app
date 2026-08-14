@@ -13,6 +13,13 @@ export function Header() {
       >
         projects
       </Link>
+      <Link
+        to="/contact"
+        activeProps={{ className: "text-fg" }}
+        inactiveProps={{ className: "text-muted-fg" }}
+      >
+        contact
+      </Link>
       <a
         href="https://toybox.ethen.app"
         className="cursor-not-allowed text-muted-fg decoration-muted-fg/50 opacity-50"
