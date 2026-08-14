@@ -20,9 +20,14 @@ function RouteComponent() {
     <div className="flex flex-col gap-2">
       <Route.Link to="hackgwinnett-web">HackGwinnett Marketing website</Route.Link>
       <Route.Link to="notion-cms-demo">Notion CMS demo</Route.Link>
-      <p className="text-sm text-muted-fg">
-        I'm working on a lot more right now. come back when {msg}
-      </p>
+      <div className="flex flex-col gap-1">
+        <p className="text-sm text-muted-fg">
+          My portfolio is arriving soon--I'm working on a lot more right now.
+        </p>
+        <p className="text-xs text-muted-fg">
+          come back when {msg}
+        </p>
+      </div>
     </div>
   );
 }
