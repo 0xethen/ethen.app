@@ -13,10 +13,14 @@ function Home() {
         <span className="text-muted-fg">{" / "}</span>
         <Route.Link to="/old">old ethen.app</Route.Link>
       </p>
-      <p className="text-xs text-muted-fg">
-        Ethen's corner of the web is a work in progress at the moment. Good things are coming
-        soon&trade;
-      </p>
+      <div className="flex flex-col gap-1 items-center text-xs text-muted-fg">
+        <p>
+          Ethen's corner of the web is a work in progress at the moment.
+        </p>
+        <p>
+           Good things are coming soon&trade;
+        </p>
+      </div>
     </div>
   );
 }
