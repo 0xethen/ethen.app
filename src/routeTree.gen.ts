@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from "./routes/__root";
 import { Route as IndexRouteImport } from "./routes/index";
 import { Route as ConnectRouteImport } from "./routes/connect";
 import { Route as ContactRouteImport } from "./routes/contact";
+import { Route as LegalRouteImport } from "./routes/legal";
 import { Route as OldRouteRouteImport } from "./routes/old/route";
 import { Route as ProjectsRouteRouteImport } from "./routes/projects/route";
 import { Route as MarketingSitesHgmPrivacyRouteImport } from "./routes/marketing-sites/hgm-privacy";
@@ -33,6 +34,11 @@ const ConnectRoute = ConnectRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: "/contact",
   path: "/contact",
+  getParentRoute: () => rootRouteImport,
+} as any);
+const LegalRoute = LegalRouteImport.update({
+  id: "/legal",
+  path: "/legal",
   getParentRoute: () => rootRouteImport,
 } as any);
 const OldRouteRoute = OldRouteRouteImport.update({
@@ -77,6 +83,7 @@ export interface FileRoutesByFullPath {
   "/projects": typeof ProjectsRouteRouteWithChildren;
   "/connect": typeof ConnectRoute;
   "/contact": typeof ContactRoute;
+  "/legal": typeof LegalRoute;
   "/marketing-sites/hgm-privacy": typeof MarketingSitesHgmPrivacyRoute;
   "/projects/hackgwinnett-web": typeof ProjectsHackgwinnettWebRoute;
   "/projects/notion-cms-demo": typeof ProjectsNotionCmsDemoRoute;
@@ -87,6 +94,7 @@ export interface FileRoutesByTo {
   "/": typeof IndexRoute;
   "/connect": typeof ConnectRoute;
   "/contact": typeof ContactRoute;
+  "/legal": typeof LegalRoute;
   "/marketing-sites/hgm-privacy": typeof MarketingSitesHgmPrivacyRoute;
   "/projects/hackgwinnett-web": typeof ProjectsHackgwinnettWebRoute;
   "/projects/notion-cms-demo": typeof ProjectsNotionCmsDemoRoute;
@@ -100,6 +108,7 @@ export interface FileRoutesById {
   "/projects": typeof ProjectsRouteRouteWithChildren;
   "/connect": typeof ConnectRoute;
   "/contact": typeof ContactRoute;
+  "/legal": typeof LegalRoute;
   "/marketing-sites/hgm-privacy": typeof MarketingSitesHgmPrivacyRoute;
   "/projects/hackgwinnett-web": typeof ProjectsHackgwinnettWebRoute;
   "/projects/notion-cms-demo": typeof ProjectsNotionCmsDemoRoute;
@@ -114,6 +123,7 @@ export interface FileRouteTypes {
     | "/projects"
     | "/connect"
     | "/contact"
+    | "/legal"
     | "/marketing-sites/hgm-privacy"
     | "/projects/hackgwinnett-web"
     | "/projects/notion-cms-demo"
@@ -124,6 +134,7 @@ export interface FileRouteTypes {
     | "/"
     | "/connect"
     | "/contact"
+    | "/legal"
     | "/marketing-sites/hgm-privacy"
     | "/projects/hackgwinnett-web"
     | "/projects/notion-cms-demo"
@@ -136,6 +147,7 @@ export interface FileRouteTypes {
     | "/projects"
     | "/connect"
     | "/contact"
+    | "/legal"
     | "/marketing-sites/hgm-privacy"
     | "/projects/hackgwinnett-web"
     | "/projects/notion-cms-demo"
@@ -149,6 +161,7 @@ export interface RootRouteChildren {
   ProjectsRouteRoute: typeof ProjectsRouteRouteWithChildren;
   ConnectRoute: typeof ConnectRoute;
   ContactRoute: typeof ContactRoute;
+  LegalRoute: typeof LegalRoute;
   MarketingSitesHgmPrivacyRoute: typeof MarketingSitesHgmPrivacyRoute;
 }
 
@@ -173,6 +186,13 @@ declare module "@tanstack/react-router" {
       path: "/contact";
       fullPath: "/contact";
       preLoaderRoute: typeof ContactRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/legal": {
+      id: "/legal";
+      path: "/legal";
+      fullPath: "/legal";
+      preLoaderRoute: typeof LegalRouteImport;
       parentRoute: typeof rootRouteImport;
     };
     "/old": {
@@ -259,8 +279,18 @@ const rootRouteChildren: RootRouteChildren = {
   ProjectsRouteRoute: ProjectsRouteRouteWithChildren,
   ConnectRoute: ConnectRoute,
   ContactRoute: ContactRoute,
+  LegalRoute: LegalRoute,
   MarketingSitesHgmPrivacyRoute: MarketingSitesHgmPrivacyRoute,
 };
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>();
+
+import type { getRouter } from "./router.tsx";
+import type { createStart } from "@tanstack/react-start";
+declare module "@tanstack/react-start" {
+  interface Register {
+    ssr: true;
+    router: Awaited<ReturnType<typeof getRouter>>;
+  }
+}
