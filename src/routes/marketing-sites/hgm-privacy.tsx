@@ -16,8 +16,10 @@ function RouteComponent() {
       </p>
       <p>
         the HackGwinnett website (www.hackgwinnett.org, hgm.ethen.app, hackgwinnett.github.io) does
-        not collect any personal information from its users, anonymously or otherwise. No bulky
-        Google Analytics script here!
+        not collect or sell any personally identifiable information from its users.
+      </p>
+      <p>
+        we only use storage techniques like saving your theme to your device or updating anonymous post likes/comments. contact us at any time at hackgwinnett [at] gmail.com
       </p>
       <p>
         we will always update you on the website and via email (for our email list subscribers) when
