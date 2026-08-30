@@ -18,15 +18,11 @@ function RouteComponent() {
 
   return (
     <div className="flex flex-col gap-2">
-      <Route.Link to="hackgwinnett-web">HackGwinnett Marketing website</Route.Link>
-      <Route.Link to="notion-cms-demo">Notion CMS demo</Route.Link>
+      <Route.Link to="p/hackgwinnett-web">HackGwinnett Marketing website</Route.Link>
+      <Route.Link to="p/notion-cms-demo">Notion CMS demo</Route.Link>
       <div className="flex flex-col gap-1 text-sm text-muted-fg">
-        <p>
-          My portfolio is arriving soon--I'm working on a lot more right now.
-        </p>
-        <p>
-          come back when {msg}
-        </p>
+        <p>My portfolio is arriving soon--I'm working on a lot more right now.</p>
+        <p>come back when {msg}</p>
       </div>
     </div>
   );

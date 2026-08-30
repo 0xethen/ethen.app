@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-export const Route = createFileRoute("/projects/notion-cms-demo")({
+export const Route = createFileRoute("/projects/p/notion-cms-demo")({
   component: RouteComponent,
 });
 

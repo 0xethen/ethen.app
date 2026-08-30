@@ -18,8 +18,10 @@ import { Route as ProjectsRouteRouteImport } from "./routes/projects/route";
 import { Route as MarketingSitesHgmPrivacyRouteImport } from "./routes/marketing-sites/hgm-privacy";
 import { Route as OldIndexRouteImport } from "./routes/old/index";
 import { Route as ProjectsIndexRouteImport } from "./routes/projects/index";
-import { Route as ProjectsHackgwinnettWebRouteImport } from "./routes/projects/hackgwinnett-web";
-import { Route as ProjectsNotionCmsDemoRouteImport } from "./routes/projects/notion-cms-demo";
+import { Route as ProjectsPRouteRouteImport } from "./routes/projects/p/route";
+import { Route as RSlugRouteImport } from "./routes/r/$slug";
+import { Route as ProjectsPHackgwinnettWebRouteImport } from "./routes/projects/p/hackgwinnett-web";
+import { Route as ProjectsPNotionCmsDemoRouteImport } from "./routes/projects/p/notion-cms-demo";
 
 const IndexRoute = IndexRouteImport.update({
   id: "/",
@@ -66,15 +68,25 @@ const ProjectsIndexRoute = ProjectsIndexRouteImport.update({
   path: "/",
   getParentRoute: () => ProjectsRouteRoute,
 } as any);
-const ProjectsHackgwinnettWebRoute = ProjectsHackgwinnettWebRouteImport.update({
-  id: "/hackgwinnett-web",
-  path: "/hackgwinnett-web",
+const ProjectsPRouteRoute = ProjectsPRouteRouteImport.update({
+  id: "/p",
+  path: "/p",
   getParentRoute: () => ProjectsRouteRoute,
 } as any);
-const ProjectsNotionCmsDemoRoute = ProjectsNotionCmsDemoRouteImport.update({
+const RSlugRoute = RSlugRouteImport.update({
+  id: "/r/$slug",
+  path: "/r/$slug",
+  getParentRoute: () => rootRouteImport,
+} as any);
+const ProjectsPHackgwinnettWebRoute = ProjectsPHackgwinnettWebRouteImport.update({
+  id: "/hackgwinnett-web",
+  path: "/hackgwinnett-web",
+  getParentRoute: () => ProjectsPRouteRoute,
+} as any);
+const ProjectsPNotionCmsDemoRoute = ProjectsPNotionCmsDemoRouteImport.update({
   id: "/notion-cms-demo",
   path: "/notion-cms-demo",
-  getParentRoute: () => ProjectsRouteRoute,
+  getParentRoute: () => ProjectsPRouteRoute,
 } as any);
 
 export interface FileRoutesByFullPath {
@@ -84,22 +96,26 @@ export interface FileRoutesByFullPath {
   "/connect": typeof ConnectRoute;
   "/contact": typeof ContactRoute;
   "/legal": typeof LegalRoute;
+  "/projects/p": typeof ProjectsPRouteRouteWithChildren;
   "/marketing-sites/hgm-privacy": typeof MarketingSitesHgmPrivacyRoute;
-  "/projects/hackgwinnett-web": typeof ProjectsHackgwinnettWebRoute;
-  "/projects/notion-cms-demo": typeof ProjectsNotionCmsDemoRoute;
+  "/r/$slug": typeof RSlugRoute;
   "/old/": typeof OldIndexRoute;
   "/projects/": typeof ProjectsIndexRoute;
+  "/projects/p/hackgwinnett-web": typeof ProjectsPHackgwinnettWebRoute;
+  "/projects/p/notion-cms-demo": typeof ProjectsPNotionCmsDemoRoute;
 }
 export interface FileRoutesByTo {
   "/": typeof IndexRoute;
   "/connect": typeof ConnectRoute;
   "/contact": typeof ContactRoute;
   "/legal": typeof LegalRoute;
+  "/projects/p": typeof ProjectsPRouteRouteWithChildren;
   "/marketing-sites/hgm-privacy": typeof MarketingSitesHgmPrivacyRoute;
-  "/projects/hackgwinnett-web": typeof ProjectsHackgwinnettWebRoute;
-  "/projects/notion-cms-demo": typeof ProjectsNotionCmsDemoRoute;
+  "/r/$slug": typeof RSlugRoute;
   "/old": typeof OldIndexRoute;
   "/projects": typeof ProjectsIndexRoute;
+  "/projects/p/hackgwinnett-web": typeof ProjectsPHackgwinnettWebRoute;
+  "/projects/p/notion-cms-demo": typeof ProjectsPNotionCmsDemoRoute;
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport;
@@ -109,11 +125,13 @@ export interface FileRoutesById {
   "/connect": typeof ConnectRoute;
   "/contact": typeof ContactRoute;
   "/legal": typeof LegalRoute;
+  "/projects/p": typeof ProjectsPRouteRouteWithChildren;
   "/marketing-sites/hgm-privacy": typeof MarketingSitesHgmPrivacyRoute;
-  "/projects/hackgwinnett-web": typeof ProjectsHackgwinnettWebRoute;
-  "/projects/notion-cms-demo": typeof ProjectsNotionCmsDemoRoute;
+  "/r/$slug": typeof RSlugRoute;
   "/old/": typeof OldIndexRoute;
   "/projects/": typeof ProjectsIndexRoute;
+  "/projects/p/hackgwinnett-web": typeof ProjectsPHackgwinnettWebRoute;
+  "/projects/p/notion-cms-demo": typeof ProjectsPNotionCmsDemoRoute;
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath;
@@ -124,22 +142,26 @@ export interface FileRouteTypes {
     | "/connect"
     | "/contact"
     | "/legal"
+    | "/projects/p"
     | "/marketing-sites/hgm-privacy"
-    | "/projects/hackgwinnett-web"
-    | "/projects/notion-cms-demo"
+    | "/r/$slug"
     | "/old/"
-    | "/projects/";
+    | "/projects/"
+    | "/projects/p/hackgwinnett-web"
+    | "/projects/p/notion-cms-demo";
   fileRoutesByTo: FileRoutesByTo;
   to:
     | "/"
     | "/connect"
     | "/contact"
     | "/legal"
+    | "/projects/p"
     | "/marketing-sites/hgm-privacy"
-    | "/projects/hackgwinnett-web"
-    | "/projects/notion-cms-demo"
+    | "/r/$slug"
     | "/old"
-    | "/projects";
+    | "/projects"
+    | "/projects/p/hackgwinnett-web"
+    | "/projects/p/notion-cms-demo";
   id:
     | "__root__"
     | "/"
@@ -148,11 +170,13 @@ export interface FileRouteTypes {
     | "/connect"
     | "/contact"
     | "/legal"
+    | "/projects/p"
     | "/marketing-sites/hgm-privacy"
-    | "/projects/hackgwinnett-web"
-    | "/projects/notion-cms-demo"
+    | "/r/$slug"
     | "/old/"
-    | "/projects/";
+    | "/projects/"
+    | "/projects/p/hackgwinnett-web"
+    | "/projects/p/notion-cms-demo";
   fileRoutesById: FileRoutesById;
 }
 export interface RootRouteChildren {
@@ -163,6 +187,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute;
   LegalRoute: typeof LegalRoute;
   MarketingSitesHgmPrivacyRoute: typeof MarketingSitesHgmPrivacyRoute;
+  RSlugRoute: typeof RSlugRoute;
 }
 
 declare module "@tanstack/react-router" {
@@ -230,19 +255,33 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof ProjectsIndexRouteImport;
       parentRoute: typeof ProjectsRouteRoute;
     };
-    "/projects/hackgwinnett-web": {
-      id: "/projects/hackgwinnett-web";
-      path: "/hackgwinnett-web";
-      fullPath: "/projects/hackgwinnett-web";
-      preLoaderRoute: typeof ProjectsHackgwinnettWebRouteImport;
+    "/projects/p": {
+      id: "/projects/p";
+      path: "/p";
+      fullPath: "/projects/p";
+      preLoaderRoute: typeof ProjectsPRouteRouteImport;
       parentRoute: typeof ProjectsRouteRoute;
     };
-    "/projects/notion-cms-demo": {
-      id: "/projects/notion-cms-demo";
+    "/r/$slug": {
+      id: "/r/$slug";
+      path: "/r/$slug";
+      fullPath: "/r/$slug";
+      preLoaderRoute: typeof RSlugRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/projects/p/hackgwinnett-web": {
+      id: "/projects/p/hackgwinnett-web";
+      path: "/hackgwinnett-web";
+      fullPath: "/projects/p/hackgwinnett-web";
+      preLoaderRoute: typeof ProjectsPHackgwinnettWebRouteImport;
+      parentRoute: typeof ProjectsPRouteRoute;
+    };
+    "/projects/p/notion-cms-demo": {
+      id: "/projects/p/notion-cms-demo";
       path: "/notion-cms-demo";
-      fullPath: "/projects/notion-cms-demo";
-      preLoaderRoute: typeof ProjectsNotionCmsDemoRouteImport;
-      parentRoute: typeof ProjectsRouteRoute;
+      fullPath: "/projects/p/notion-cms-demo";
+      preLoaderRoute: typeof ProjectsPNotionCmsDemoRouteImport;
+      parentRoute: typeof ProjectsPRouteRoute;
     };
   }
 }
@@ -257,15 +296,27 @@ const OldRouteRouteChildren: OldRouteRouteChildren = {
 
 const OldRouteRouteWithChildren = OldRouteRoute._addFileChildren(OldRouteRouteChildren);
 
+interface ProjectsPRouteRouteChildren {
+  ProjectsPHackgwinnettWebRoute: typeof ProjectsPHackgwinnettWebRoute;
+  ProjectsPNotionCmsDemoRoute: typeof ProjectsPNotionCmsDemoRoute;
+}
+
+const ProjectsPRouteRouteChildren: ProjectsPRouteRouteChildren = {
+  ProjectsPHackgwinnettWebRoute: ProjectsPHackgwinnettWebRoute,
+  ProjectsPNotionCmsDemoRoute: ProjectsPNotionCmsDemoRoute,
+};
+
+const ProjectsPRouteRouteWithChildren = ProjectsPRouteRoute._addFileChildren(
+  ProjectsPRouteRouteChildren,
+);
+
 interface ProjectsRouteRouteChildren {
-  ProjectsHackgwinnettWebRoute: typeof ProjectsHackgwinnettWebRoute;
-  ProjectsNotionCmsDemoRoute: typeof ProjectsNotionCmsDemoRoute;
+  ProjectsPRouteRoute: typeof ProjectsPRouteRouteWithChildren;
   ProjectsIndexRoute: typeof ProjectsIndexRoute;
 }
 
 const ProjectsRouteRouteChildren: ProjectsRouteRouteChildren = {
-  ProjectsHackgwinnettWebRoute: ProjectsHackgwinnettWebRoute,
-  ProjectsNotionCmsDemoRoute: ProjectsNotionCmsDemoRoute,
+  ProjectsPRouteRoute: ProjectsPRouteRouteWithChildren,
   ProjectsIndexRoute: ProjectsIndexRoute,
 };
 
@@ -281,6 +332,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   LegalRoute: LegalRoute,
   MarketingSitesHgmPrivacyRoute: MarketingSitesHgmPrivacyRoute,
+  RSlugRoute: RSlugRoute,
 };
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

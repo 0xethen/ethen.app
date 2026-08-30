@@ -22,8 +22,9 @@ export function Header() {
       </Link>
       <a
         href="https://toybox.ethen.app"
-        className="cursor-not-allowed text-muted-fg decoration-muted-fg/50 opacity-50"
-        onClick={(e) => e.preventDefault()}
+        className="text-muted-fg"
+        // className="cursor-not-allowed text-muted-fg decoration-muted-fg/50 opacity-50"
+        // onClick={(e) => e.preventDefault()}
       >
         toybox
       </a>

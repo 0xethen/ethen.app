@@ -1,8 +1,18 @@
 import { Header } from "#/components/Header.tsx";
-import { IconArrowBack } from "@tabler/icons-react";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/contact")({
+  head: () => ({
+    meta: [
+      {
+        title: "Contact / ethen.app",
+      },
+      // {
+      //   name: "description",
+      //   content: "Redirecting...",
+      // },
+    ],
+  }),
   component: RouteComponent,
 });
 
@@ -10,20 +20,11 @@ function RouteComponent() {
   return (
     <div className="min-h-dvh p-8">
       <Header />
-      <div className="mx-auto w-fit flex flex-wrap flex-col min-h-[calc(100vh-128px)] items-center justify-center text-center text-sm md:text-base">
-        <Route.Link
-          to=".."
-          className="flex items-center gap-1 self-start text-muted-fg text-xs md:text-sm decoration-muted-fg/50 hover:decoration-muted-fg/80"
-        >
-          <>
-            <IconArrowBack className="size-4" />
-            {"back..."}
-          </>
-        </Route.Link>
+      <div className="mx-auto w-fit flex flex-wrap flex-col gap-1 min-h-[calc(100vh-128px)] items-center justify-center text-center text-sm md:text-base">
         <p>
           send me a message:{"  "}
           <span className="font-mono">
-            public{" "}[{" "}a{" "}t{" "}]{" "}ethen(dot)app
+            public{" "}[{" "}a{" "}t{" "}]{" "}(this_domain)
           </span>
         </p>
         <p>

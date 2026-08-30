@@ -2,6 +2,17 @@ import { Header } from "#/components/Header.tsx";
 import { createFileRoute, Outlet } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/old")({
+  head: () => ({
+    meta: [
+      {
+        title: "about old.ethen.app / ethen.app",
+      },
+      // {
+      //   name: "description",
+      //   content: "Redirecting...",
+      // },
+    ],
+  }),
   component: RouteComponent,
 });
 
