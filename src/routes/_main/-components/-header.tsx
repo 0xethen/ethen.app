@@ -20,14 +20,21 @@ export function Header() {
       >
         contact
       </Link>
-      <a
+      <Link
+        to="/toybox"
+        activeProps={{ className: "text-purple-300" }}
+        inactiveProps={{ className: "text-purple-300/50" }}
+      >
+        toybox
+      </Link>
+      {/* <a
         href="https://toybox.ethen.app"
         className="text-muted-fg"
         // className="cursor-not-allowed text-muted-fg decoration-muted-fg/50 opacity-50"
         // onClick={(e) => e.preventDefault()}
       >
         toybox
-      </a>
+      </a> */}
       <Link
         to="/old"
         activeProps={{ className: "text-fg" }}

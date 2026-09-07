@@ -1,6 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-export const Route = createFileRoute("/old/")({
+export const Route = createFileRoute("/_main/old/")({
+  head: () => ({
+    meta: [
+      {
+        title: "about old.ethen.app / ethen.app",
+      },
+    ],
+  }),
   component: RouteComponent,
 });
 

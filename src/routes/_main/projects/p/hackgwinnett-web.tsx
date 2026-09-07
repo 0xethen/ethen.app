@@ -1,9 +1,9 @@
-import { Separator } from "#/components/ui/separator.tsx";
 import { cn } from "#/lib/utils";
 import { IconZoomIn } from "@tabler/icons-react";
 import { createFileRoute } from "@tanstack/react-router";
+import { Separator } from "#/components/ui/separator";
 
-export const Route = createFileRoute("/projects/p/hackgwinnett-web")({
+export const Route = createFileRoute("/_main/projects/p/hackgwinnett-web")({
   component: RouteComponent,
 });
 

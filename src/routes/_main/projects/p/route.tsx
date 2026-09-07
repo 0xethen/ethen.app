@@ -1,7 +1,7 @@
 import { IconArrowBack } from "@tabler/icons-react";
 import { createFileRoute, Outlet } from "@tanstack/react-router";
 
-export const Route = createFileRoute("/projects/p")({
+export const Route = createFileRoute("/_main/projects/p")({
   head: () => ({
     meta: [
       {

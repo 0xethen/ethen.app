@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-export const Route = createFileRoute("/legal")({
+export const Route = createFileRoute("/legal/")({
   validateSearch: (search) => {
     return { s: search.s || "eda" };
   },

@@ -2,9 +2,15 @@ import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({ component: Home });
 
+const DEFAULT_DOMAIN = "ethen";
+
 function Home() {
   const change = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.value.includes(" ")) e.target.value = e.target.value.replaceAll(" ", "");
+  };
+
+  const validate = (e: React.FocusEvent<HTMLInputElement>) => {
+    if (e.target.value.trim() === "") e.target.value = DEFAULT_DOMAIN;
   };
 
   return (
@@ -18,10 +24,13 @@ function Home() {
           you are on{" "}
           <span className="font-mono font-medium">
             <input
+              id="domain"
               type="text"
               className="field-sizing-content"
-              defaultValue="ethen"
+              defaultValue={DEFAULT_DOMAIN}
+              placeholder={DEFAULT_DOMAIN}
               onChange={change}
+              onBlur={validate}
             />
             .app
           </span>

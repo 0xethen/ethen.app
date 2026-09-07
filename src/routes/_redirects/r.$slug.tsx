@@ -1,14 +1,14 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 
 const redirects: Record<string, string> = {
-  hgfullstack: "https://github.com/0xethen/fullstack-workshop",
+  fullstack: "https://github.com/0xethen/hg6-fullstack-workshop",
 };
 
 const to = (href: string) => {
   return href.startsWith("/") ? { to: href } : { href };
 };
 
-export const Route = createFileRoute("/r/$slug")({
+export const Route = createFileRoute("/_redirects/r/$slug")({
   head: () => ({
     meta: [
       {
