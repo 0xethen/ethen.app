@@ -8,303 +8,321 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as MainRouteRouteImport } from './routes/_main/route'
-import { Route as LegalIndexRouteImport } from './routes/legal/index'
-import { Route as MarketingSitesHgmPrivacyRouteImport } from './routes/marketing-sites/hgm-privacy'
-import { Route as AliasesConnectIndexRouteImport } from './routes/_aliases/connect.index'
-import { Route as MainContactIndexRouteImport } from './routes/_main/contact.index'
-import { Route as MainOldIndexRouteImport } from './routes/_main/old.index'
-import { Route as MainProjectsIndexRouteImport } from './routes/_main/projects/index'
-import { Route as MainProjectsPRouteRouteImport } from './routes/_main/projects/p/route'
-import { Route as MainToyboxIndexRouteImport } from './routes/_main/toybox.index'
-import { Route as RedirectsRSlugRouteImport } from './routes/_redirects/r.$slug'
-import { Route as MainProjectsPHackgwinnettWebRouteImport } from './routes/_main/projects/p/hackgwinnett-web'
-import { Route as MainProjectsPNotionCmsDemoRouteImport } from './routes/_main/projects/p/notion-cms-demo'
+import { Route as rootRouteImport } from "./routes/__root";
+import { Route as IndexRouteImport } from "./routes/index";
+import { Route as MainRouteRouteImport } from "./routes/_main/route";
+import { Route as LegalIndexRouteImport } from "./routes/legal/index";
+import { Route as MarketingSitesHgmPrivacyRouteImport } from "./routes/marketing-sites/hgm-privacy";
+import { Route as AliasesConnectIndexRouteImport } from "./routes/_aliases/connect.index";
+import { Route as MainContactIndexRouteImport } from "./routes/_main/contact.index";
+import { Route as MainOldIndexRouteImport } from "./routes/_main/old.index";
+import { Route as MainProjectsIndexRouteImport } from "./routes/_main/projects/index";
+import { Route as MainProjectsPRouteRouteImport } from "./routes/_main/projects/p/route";
+import { Route as MainToyboxIndexRouteImport } from "./routes/_main/toybox.index";
+import { Route as RedirectsRSlugRouteImport } from "./routes/_redirects/r.$slug";
+import { Route as RedirectsWithgcpsSplatRouteImport } from "./routes/_redirects/withgcps.$";
+import { Route as MainProjectsPHackgwinnettWebRouteImport } from "./routes/_main/projects/p/hackgwinnett-web";
+import { Route as MainProjectsPNotionCmsDemoRouteImport } from "./routes/_main/projects/p/notion-cms-demo";
 
 const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+  id: "/",
+  path: "/",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const MainRouteRoute = MainRouteRouteImport.update({
-  id: '/_main',
+  id: "/_main",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const LegalIndexRoute = LegalIndexRouteImport.update({
-  id: '/legal/',
-  path: '/legal/',
+  id: "/legal/",
+  path: "/legal/",
   getParentRoute: () => rootRouteImport,
-} as any)
-const MarketingSitesHgmPrivacyRoute =
-  MarketingSitesHgmPrivacyRouteImport.update({
-    id: '/marketing-sites/hgm-privacy',
-    path: '/marketing-sites/hgm-privacy',
-    getParentRoute: () => rootRouteImport,
-  } as any)
+} as any);
+const MarketingSitesHgmPrivacyRoute = MarketingSitesHgmPrivacyRouteImport.update({
+  id: "/marketing-sites/hgm-privacy",
+  path: "/marketing-sites/hgm-privacy",
+  getParentRoute: () => rootRouteImport,
+} as any);
 const AliasesConnectIndexRoute = AliasesConnectIndexRouteImport.update({
-  id: '/_aliases/connect/',
-  path: '/connect/',
+  id: "/_aliases/connect/",
+  path: "/connect/",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const MainContactIndexRoute = MainContactIndexRouteImport.update({
-  id: '/contact/',
-  path: '/contact/',
+  id: "/contact/",
+  path: "/contact/",
   getParentRoute: () => MainRouteRoute,
-} as any)
+} as any);
 const MainOldIndexRoute = MainOldIndexRouteImport.update({
-  id: '/old/',
-  path: '/old/',
+  id: "/old/",
+  path: "/old/",
   getParentRoute: () => MainRouteRoute,
-} as any)
+} as any);
 const MainProjectsIndexRoute = MainProjectsIndexRouteImport.update({
-  id: '/projects/',
-  path: '/projects/',
+  id: "/projects/",
+  path: "/projects/",
   getParentRoute: () => MainRouteRoute,
-} as any)
+} as any);
 const MainProjectsPRouteRoute = MainProjectsPRouteRouteImport.update({
-  id: '/projects/p',
-  path: '/projects/p',
+  id: "/projects/p",
+  path: "/projects/p",
   getParentRoute: () => MainRouteRoute,
-} as any)
+} as any);
 const MainToyboxIndexRoute = MainToyboxIndexRouteImport.update({
-  id: '/toybox/',
-  path: '/toybox/',
+  id: "/toybox/",
+  path: "/toybox/",
   getParentRoute: () => MainRouteRoute,
-} as any)
+} as any);
 const RedirectsRSlugRoute = RedirectsRSlugRouteImport.update({
-  id: '/_redirects/r/$slug',
-  path: '/r/$slug',
+  id: "/_redirects/r/$slug",
+  path: "/r/$slug",
   getParentRoute: () => rootRouteImport,
-} as any)
-const MainProjectsPHackgwinnettWebRoute =
-  MainProjectsPHackgwinnettWebRouteImport.update({
-    id: '/hackgwinnett-web',
-    path: '/hackgwinnett-web',
-    getParentRoute: () => MainProjectsPRouteRoute,
-  } as any)
-const MainProjectsPNotionCmsDemoRoute =
-  MainProjectsPNotionCmsDemoRouteImport.update({
-    id: '/notion-cms-demo',
-    path: '/notion-cms-demo',
-    getParentRoute: () => MainProjectsPRouteRoute,
-  } as any)
+} as any);
+const RedirectsWithgcpsSplatRoute = RedirectsWithgcpsSplatRouteImport.update({
+  id: "/_redirects/withgcps/$",
+  path: "/withgcps/$",
+  getParentRoute: () => rootRouteImport,
+} as any);
+const MainProjectsPHackgwinnettWebRoute = MainProjectsPHackgwinnettWebRouteImport.update({
+  id: "/hackgwinnett-web",
+  path: "/hackgwinnett-web",
+  getParentRoute: () => MainProjectsPRouteRoute,
+} as any);
+const MainProjectsPNotionCmsDemoRoute = MainProjectsPNotionCmsDemoRouteImport.update({
+  id: "/notion-cms-demo",
+  path: "/notion-cms-demo",
+  getParentRoute: () => MainProjectsPRouteRoute,
+} as any);
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/marketing-sites/hgm-privacy': typeof MarketingSitesHgmPrivacyRoute
-  '/legal/': typeof LegalIndexRoute
-  '/projects/p': typeof MainProjectsPRouteRouteWithChildren
-  '/r/$slug': typeof RedirectsRSlugRoute
-  '/connect/': typeof AliasesConnectIndexRoute
-  '/contact/': typeof MainContactIndexRoute
-  '/old/': typeof MainOldIndexRoute
-  '/projects/': typeof MainProjectsIndexRoute
-  '/toybox/': typeof MainToyboxIndexRoute
-  '/projects/p/hackgwinnett-web': typeof MainProjectsPHackgwinnettWebRoute
-  '/projects/p/notion-cms-demo': typeof MainProjectsPNotionCmsDemoRoute
+  "/": typeof IndexRoute;
+  "/marketing-sites/hgm-privacy": typeof MarketingSitesHgmPrivacyRoute;
+  "/legal/": typeof LegalIndexRoute;
+  "/projects/p": typeof MainProjectsPRouteRouteWithChildren;
+  "/r/$slug": typeof RedirectsRSlugRoute;
+  "/withgcps/$": typeof RedirectsWithgcpsSplatRoute;
+  "/connect/": typeof AliasesConnectIndexRoute;
+  "/contact/": typeof MainContactIndexRoute;
+  "/old/": typeof MainOldIndexRoute;
+  "/projects/": typeof MainProjectsIndexRoute;
+  "/toybox/": typeof MainToyboxIndexRoute;
+  "/projects/p/hackgwinnett-web": typeof MainProjectsPHackgwinnettWebRoute;
+  "/projects/p/notion-cms-demo": typeof MainProjectsPNotionCmsDemoRoute;
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/marketing-sites/hgm-privacy': typeof MarketingSitesHgmPrivacyRoute
-  '/legal': typeof LegalIndexRoute
-  '/projects/p': typeof MainProjectsPRouteRouteWithChildren
-  '/r/$slug': typeof RedirectsRSlugRoute
-  '/connect': typeof AliasesConnectIndexRoute
-  '/contact': typeof MainContactIndexRoute
-  '/old': typeof MainOldIndexRoute
-  '/projects': typeof MainProjectsIndexRoute
-  '/toybox': typeof MainToyboxIndexRoute
-  '/projects/p/hackgwinnett-web': typeof MainProjectsPHackgwinnettWebRoute
-  '/projects/p/notion-cms-demo': typeof MainProjectsPNotionCmsDemoRoute
+  "/": typeof IndexRoute;
+  "/marketing-sites/hgm-privacy": typeof MarketingSitesHgmPrivacyRoute;
+  "/legal": typeof LegalIndexRoute;
+  "/projects/p": typeof MainProjectsPRouteRouteWithChildren;
+  "/r/$slug": typeof RedirectsRSlugRoute;
+  "/withgcps/$": typeof RedirectsWithgcpsSplatRoute;
+  "/connect": typeof AliasesConnectIndexRoute;
+  "/contact": typeof MainContactIndexRoute;
+  "/old": typeof MainOldIndexRoute;
+  "/projects": typeof MainProjectsIndexRoute;
+  "/toybox": typeof MainToyboxIndexRoute;
+  "/projects/p/hackgwinnett-web": typeof MainProjectsPHackgwinnettWebRoute;
+  "/projects/p/notion-cms-demo": typeof MainProjectsPNotionCmsDemoRoute;
 }
 export interface FileRoutesById {
-  __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
-  '/_main': typeof MainRouteRouteWithChildren
-  '/marketing-sites/hgm-privacy': typeof MarketingSitesHgmPrivacyRoute
-  '/legal/': typeof LegalIndexRoute
-  '/_main/projects/p': typeof MainProjectsPRouteRouteWithChildren
-  '/_redirects/r/$slug': typeof RedirectsRSlugRoute
-  '/_aliases/connect/': typeof AliasesConnectIndexRoute
-  '/_main/contact/': typeof MainContactIndexRoute
-  '/_main/old/': typeof MainOldIndexRoute
-  '/_main/projects/': typeof MainProjectsIndexRoute
-  '/_main/toybox/': typeof MainToyboxIndexRoute
-  '/_main/projects/p/hackgwinnett-web': typeof MainProjectsPHackgwinnettWebRoute
-  '/_main/projects/p/notion-cms-demo': typeof MainProjectsPNotionCmsDemoRoute
+  __root__: typeof rootRouteImport;
+  "/": typeof IndexRoute;
+  "/_main": typeof MainRouteRouteWithChildren;
+  "/marketing-sites/hgm-privacy": typeof MarketingSitesHgmPrivacyRoute;
+  "/legal/": typeof LegalIndexRoute;
+  "/_main/projects/p": typeof MainProjectsPRouteRouteWithChildren;
+  "/_redirects/r/$slug": typeof RedirectsRSlugRoute;
+  "/_redirects/withgcps/$": typeof RedirectsWithgcpsSplatRoute;
+  "/_aliases/connect/": typeof AliasesConnectIndexRoute;
+  "/_main/contact/": typeof MainContactIndexRoute;
+  "/_main/old/": typeof MainOldIndexRoute;
+  "/_main/projects/": typeof MainProjectsIndexRoute;
+  "/_main/toybox/": typeof MainToyboxIndexRoute;
+  "/_main/projects/p/hackgwinnett-web": typeof MainProjectsPHackgwinnettWebRoute;
+  "/_main/projects/p/notion-cms-demo": typeof MainProjectsPNotionCmsDemoRoute;
 }
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath
+  fileRoutesByFullPath: FileRoutesByFullPath;
   fullPaths:
-    | '/'
-    | '/marketing-sites/hgm-privacy'
-    | '/legal/'
-    | '/projects/p'
-    | '/r/$slug'
-    | '/connect/'
-    | '/contact/'
-    | '/old/'
-    | '/projects/'
-    | '/toybox/'
-    | '/projects/p/hackgwinnett-web'
-    | '/projects/p/notion-cms-demo'
-  fileRoutesByTo: FileRoutesByTo
+    | "/"
+    | "/marketing-sites/hgm-privacy"
+    | "/legal/"
+    | "/projects/p"
+    | "/r/$slug"
+    | "/withgcps/$"
+    | "/connect/"
+    | "/contact/"
+    | "/old/"
+    | "/projects/"
+    | "/toybox/"
+    | "/projects/p/hackgwinnett-web"
+    | "/projects/p/notion-cms-demo";
+  fileRoutesByTo: FileRoutesByTo;
   to:
-    | '/'
-    | '/marketing-sites/hgm-privacy'
-    | '/legal'
-    | '/projects/p'
-    | '/r/$slug'
-    | '/connect'
-    | '/contact'
-    | '/old'
-    | '/projects'
-    | '/toybox'
-    | '/projects/p/hackgwinnett-web'
-    | '/projects/p/notion-cms-demo'
+    | "/"
+    | "/marketing-sites/hgm-privacy"
+    | "/legal"
+    | "/projects/p"
+    | "/r/$slug"
+    | "/withgcps/$"
+    | "/connect"
+    | "/contact"
+    | "/old"
+    | "/projects"
+    | "/toybox"
+    | "/projects/p/hackgwinnett-web"
+    | "/projects/p/notion-cms-demo";
   id:
-    | '__root__'
-    | '/'
-    | '/_main'
-    | '/marketing-sites/hgm-privacy'
-    | '/legal/'
-    | '/_main/projects/p'
-    | '/_redirects/r/$slug'
-    | '/_aliases/connect/'
-    | '/_main/contact/'
-    | '/_main/old/'
-    | '/_main/projects/'
-    | '/_main/toybox/'
-    | '/_main/projects/p/hackgwinnett-web'
-    | '/_main/projects/p/notion-cms-demo'
-  fileRoutesById: FileRoutesById
+    | "__root__"
+    | "/"
+    | "/_main"
+    | "/marketing-sites/hgm-privacy"
+    | "/legal/"
+    | "/_main/projects/p"
+    | "/_redirects/r/$slug"
+    | "/_redirects/withgcps/$"
+    | "/_aliases/connect/"
+    | "/_main/contact/"
+    | "/_main/old/"
+    | "/_main/projects/"
+    | "/_main/toybox/"
+    | "/_main/projects/p/hackgwinnett-web"
+    | "/_main/projects/p/notion-cms-demo";
+  fileRoutesById: FileRoutesById;
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  MainRouteRoute: typeof MainRouteRouteWithChildren
-  MarketingSitesHgmPrivacyRoute: typeof MarketingSitesHgmPrivacyRoute
-  LegalIndexRoute: typeof LegalIndexRoute
-  RedirectsRSlugRoute: typeof RedirectsRSlugRoute
-  AliasesConnectIndexRoute: typeof AliasesConnectIndexRoute
+  IndexRoute: typeof IndexRoute;
+  MainRouteRoute: typeof MainRouteRouteWithChildren;
+  MarketingSitesHgmPrivacyRoute: typeof MarketingSitesHgmPrivacyRoute;
+  LegalIndexRoute: typeof LegalIndexRoute;
+  RedirectsRSlugRoute: typeof RedirectsRSlugRoute;
+  RedirectsWithgcpsSplatRoute: typeof RedirectsWithgcpsSplatRoute;
+  AliasesConnectIndexRoute: typeof AliasesConnectIndexRoute;
 }
 
-declare module '@tanstack/react-router' {
+declare module "@tanstack/react-router" {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/_main': {
-      id: '/_main'
-      path: ''
-      fullPath: '/'
-      preLoaderRoute: typeof MainRouteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/legal/': {
-      id: '/legal/'
-      path: '/legal'
-      fullPath: '/legal/'
-      preLoaderRoute: typeof LegalIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/marketing-sites/hgm-privacy': {
-      id: '/marketing-sites/hgm-privacy'
-      path: '/marketing-sites/hgm-privacy'
-      fullPath: '/marketing-sites/hgm-privacy'
-      preLoaderRoute: typeof MarketingSitesHgmPrivacyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/_aliases/connect/': {
-      id: '/_aliases/connect/'
-      path: '/connect'
-      fullPath: '/connect/'
-      preLoaderRoute: typeof AliasesConnectIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/_main/contact/': {
-      id: '/_main/contact/'
-      path: '/contact'
-      fullPath: '/contact/'
-      preLoaderRoute: typeof MainContactIndexRouteImport
-      parentRoute: typeof MainRouteRoute
-    }
-    '/_main/old/': {
-      id: '/_main/old/'
-      path: '/old'
-      fullPath: '/old/'
-      preLoaderRoute: typeof MainOldIndexRouteImport
-      parentRoute: typeof MainRouteRoute
-    }
-    '/_main/projects/': {
-      id: '/_main/projects/'
-      path: '/projects'
-      fullPath: '/projects/'
-      preLoaderRoute: typeof MainProjectsIndexRouteImport
-      parentRoute: typeof MainRouteRoute
-    }
-    '/_main/projects/p': {
-      id: '/_main/projects/p'
-      path: '/projects/p'
-      fullPath: '/projects/p'
-      preLoaderRoute: typeof MainProjectsPRouteRouteImport
-      parentRoute: typeof MainRouteRoute
-    }
-    '/_main/toybox/': {
-      id: '/_main/toybox/'
-      path: '/toybox'
-      fullPath: '/toybox/'
-      preLoaderRoute: typeof MainToyboxIndexRouteImport
-      parentRoute: typeof MainRouteRoute
-    }
-    '/_redirects/r/$slug': {
-      id: '/_redirects/r/$slug'
-      path: '/r/$slug'
-      fullPath: '/r/$slug'
-      preLoaderRoute: typeof RedirectsRSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/_main/projects/p/hackgwinnett-web': {
-      id: '/_main/projects/p/hackgwinnett-web'
-      path: '/hackgwinnett-web'
-      fullPath: '/projects/p/hackgwinnett-web'
-      preLoaderRoute: typeof MainProjectsPHackgwinnettWebRouteImport
-      parentRoute: typeof MainProjectsPRouteRoute
-    }
-    '/_main/projects/p/notion-cms-demo': {
-      id: '/_main/projects/p/notion-cms-demo'
-      path: '/notion-cms-demo'
-      fullPath: '/projects/p/notion-cms-demo'
-      preLoaderRoute: typeof MainProjectsPNotionCmsDemoRouteImport
-      parentRoute: typeof MainProjectsPRouteRoute
-    }
+    "/": {
+      id: "/";
+      path: "/";
+      fullPath: "/";
+      preLoaderRoute: typeof IndexRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/_main": {
+      id: "/_main";
+      path: "";
+      fullPath: "/";
+      preLoaderRoute: typeof MainRouteRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/legal/": {
+      id: "/legal/";
+      path: "/legal";
+      fullPath: "/legal/";
+      preLoaderRoute: typeof LegalIndexRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/marketing-sites/hgm-privacy": {
+      id: "/marketing-sites/hgm-privacy";
+      path: "/marketing-sites/hgm-privacy";
+      fullPath: "/marketing-sites/hgm-privacy";
+      preLoaderRoute: typeof MarketingSitesHgmPrivacyRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/_aliases/connect/": {
+      id: "/_aliases/connect/";
+      path: "/connect";
+      fullPath: "/connect/";
+      preLoaderRoute: typeof AliasesConnectIndexRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/_main/contact/": {
+      id: "/_main/contact/";
+      path: "/contact";
+      fullPath: "/contact/";
+      preLoaderRoute: typeof MainContactIndexRouteImport;
+      parentRoute: typeof MainRouteRoute;
+    };
+    "/_main/old/": {
+      id: "/_main/old/";
+      path: "/old";
+      fullPath: "/old/";
+      preLoaderRoute: typeof MainOldIndexRouteImport;
+      parentRoute: typeof MainRouteRoute;
+    };
+    "/_main/projects/": {
+      id: "/_main/projects/";
+      path: "/projects";
+      fullPath: "/projects/";
+      preLoaderRoute: typeof MainProjectsIndexRouteImport;
+      parentRoute: typeof MainRouteRoute;
+    };
+    "/_main/projects/p": {
+      id: "/_main/projects/p";
+      path: "/projects/p";
+      fullPath: "/projects/p";
+      preLoaderRoute: typeof MainProjectsPRouteRouteImport;
+      parentRoute: typeof MainRouteRoute;
+    };
+    "/_main/toybox/": {
+      id: "/_main/toybox/";
+      path: "/toybox";
+      fullPath: "/toybox/";
+      preLoaderRoute: typeof MainToyboxIndexRouteImport;
+      parentRoute: typeof MainRouteRoute;
+    };
+    "/_redirects/r/$slug": {
+      id: "/_redirects/r/$slug";
+      path: "/r/$slug";
+      fullPath: "/r/$slug";
+      preLoaderRoute: typeof RedirectsRSlugRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/_redirects/withgcps/$": {
+      id: "/_redirects/withgcps/$";
+      path: "/withgcps/$";
+      fullPath: "/withgcps/$";
+      preLoaderRoute: typeof RedirectsWithgcpsSplatRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/_main/projects/p/hackgwinnett-web": {
+      id: "/_main/projects/p/hackgwinnett-web";
+      path: "/hackgwinnett-web";
+      fullPath: "/projects/p/hackgwinnett-web";
+      preLoaderRoute: typeof MainProjectsPHackgwinnettWebRouteImport;
+      parentRoute: typeof MainProjectsPRouteRoute;
+    };
+    "/_main/projects/p/notion-cms-demo": {
+      id: "/_main/projects/p/notion-cms-demo";
+      path: "/notion-cms-demo";
+      fullPath: "/projects/p/notion-cms-demo";
+      preLoaderRoute: typeof MainProjectsPNotionCmsDemoRouteImport;
+      parentRoute: typeof MainProjectsPRouteRoute;
+    };
   }
 }
 
 interface MainProjectsPRouteRouteChildren {
-  MainProjectsPHackgwinnettWebRoute: typeof MainProjectsPHackgwinnettWebRoute
-  MainProjectsPNotionCmsDemoRoute: typeof MainProjectsPNotionCmsDemoRoute
+  MainProjectsPHackgwinnettWebRoute: typeof MainProjectsPHackgwinnettWebRoute;
+  MainProjectsPNotionCmsDemoRoute: typeof MainProjectsPNotionCmsDemoRoute;
 }
 
 const MainProjectsPRouteRouteChildren: MainProjectsPRouteRouteChildren = {
   MainProjectsPHackgwinnettWebRoute: MainProjectsPHackgwinnettWebRoute,
   MainProjectsPNotionCmsDemoRoute: MainProjectsPNotionCmsDemoRoute,
-}
+};
 
-const MainProjectsPRouteRouteWithChildren =
-  MainProjectsPRouteRoute._addFileChildren(MainProjectsPRouteRouteChildren)
+const MainProjectsPRouteRouteWithChildren = MainProjectsPRouteRoute._addFileChildren(
+  MainProjectsPRouteRouteChildren,
+);
 
 interface MainRouteRouteChildren {
-  MainProjectsPRouteRoute: typeof MainProjectsPRouteRouteWithChildren
-  MainContactIndexRoute: typeof MainContactIndexRoute
-  MainOldIndexRoute: typeof MainOldIndexRoute
-  MainProjectsIndexRoute: typeof MainProjectsIndexRoute
-  MainToyboxIndexRoute: typeof MainToyboxIndexRoute
+  MainProjectsPRouteRoute: typeof MainProjectsPRouteRouteWithChildren;
+  MainContactIndexRoute: typeof MainContactIndexRoute;
+  MainOldIndexRoute: typeof MainOldIndexRoute;
+  MainProjectsIndexRoute: typeof MainProjectsIndexRoute;
+  MainToyboxIndexRoute: typeof MainToyboxIndexRoute;
 }
 
 const MainRouteRouteChildren: MainRouteRouteChildren = {
@@ -313,11 +331,9 @@ const MainRouteRouteChildren: MainRouteRouteChildren = {
   MainOldIndexRoute: MainOldIndexRoute,
   MainProjectsIndexRoute: MainProjectsIndexRoute,
   MainToyboxIndexRoute: MainToyboxIndexRoute,
-}
+};
 
-const MainRouteRouteWithChildren = MainRouteRoute._addFileChildren(
-  MainRouteRouteChildren,
-)
+const MainRouteRouteWithChildren = MainRouteRoute._addFileChildren(MainRouteRouteChildren);
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -325,17 +341,18 @@ const rootRouteChildren: RootRouteChildren = {
   MarketingSitesHgmPrivacyRoute: MarketingSitesHgmPrivacyRoute,
   LegalIndexRoute: LegalIndexRoute,
   RedirectsRSlugRoute: RedirectsRSlugRoute,
+  RedirectsWithgcpsSplatRoute: RedirectsWithgcpsSplatRoute,
   AliasesConnectIndexRoute: AliasesConnectIndexRoute,
-}
+};
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>()
+  ._addFileTypes<FileRouteTypes>();
 
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
+import type { getRouter } from "./router.tsx";
+import type { createStart } from "@tanstack/react-start";
+declare module "@tanstack/react-start" {
   interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
+    ssr: true;
+    router: Awaited<ReturnType<typeof getRouter>>;
   }
 }
