@@ -22,8 +22,10 @@ export function Header() {
       </Link>
       <Link
         to="/toybox"
-        activeProps={{ className: "text-purple-300" }}
-        inactiveProps={{ className: "text-purple-300/50" }}
+        activeProps={{ className: "text-purple-300 decoration-purple-300/70" }}
+        inactiveProps={{
+          className: "text-purple-300/70 decoration-purple-300/30 hover:decoration-purple-300/70",
+        }}
       >
         toybox
       </Link>
