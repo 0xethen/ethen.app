@@ -10,7 +10,7 @@ function Home() {
 
   useEffect(() => {
     setDomain(localStorage.getItem("domain") || domain);
-  }, [localStorage.getItem("domain")]);
+  }, [localStorage]);
 
   const change = (e: React.ChangeEvent<HTMLInputElement>) => {
     setDomain(e.target.value.replaceAll(" ", ""));
