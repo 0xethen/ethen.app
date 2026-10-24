@@ -19,6 +19,7 @@ import { Route as MainOldIndexRouteImport } from "./routes/_main/old.index";
 import { Route as MainProjectsIndexRouteImport } from "./routes/_main/projects/index";
 import { Route as MainProjectsPRouteRouteImport } from "./routes/_main/projects/p/route";
 import { Route as MainToyboxIndexRouteImport } from "./routes/_main/toybox.index";
+import { Route as RedirectsBogeyIndexRouteImport } from "./routes/_redirects/bogey.index";
 import { Route as RedirectsRSlugRouteImport } from "./routes/_redirects/r.$slug";
 import { Route as RedirectsWithgcpsSplatRouteImport } from "./routes/_redirects/withgcps.$";
 import { Route as MainProjectsPHackgwinnettWebRouteImport } from "./routes/_main/projects/p/hackgwinnett-web";
@@ -73,6 +74,11 @@ const MainToyboxIndexRoute = MainToyboxIndexRouteImport.update({
   path: "/toybox/",
   getParentRoute: () => MainRouteRoute,
 } as any);
+const RedirectsBogeyIndexRoute = RedirectsBogeyIndexRouteImport.update({
+  id: "/_redirects/bogey/",
+  path: "/bogey/",
+  getParentRoute: () => rootRouteImport,
+} as any);
 const RedirectsRSlugRoute = RedirectsRSlugRouteImport.update({
   id: "/_redirects/r/$slug",
   path: "/r/$slug",
@@ -106,6 +112,7 @@ export interface FileRoutesByFullPath {
   "/old/": typeof MainOldIndexRoute;
   "/projects/": typeof MainProjectsIndexRoute;
   "/toybox/": typeof MainToyboxIndexRoute;
+  "/bogey/": typeof RedirectsBogeyIndexRoute;
   "/projects/p/hackgwinnett-web": typeof MainProjectsPHackgwinnettWebRoute;
   "/projects/p/notion-cms-demo": typeof MainProjectsPNotionCmsDemoRoute;
 }
@@ -121,6 +128,7 @@ export interface FileRoutesByTo {
   "/old": typeof MainOldIndexRoute;
   "/projects": typeof MainProjectsIndexRoute;
   "/toybox": typeof MainToyboxIndexRoute;
+  "/bogey": typeof RedirectsBogeyIndexRoute;
   "/projects/p/hackgwinnett-web": typeof MainProjectsPHackgwinnettWebRoute;
   "/projects/p/notion-cms-demo": typeof MainProjectsPNotionCmsDemoRoute;
 }
@@ -138,6 +146,7 @@ export interface FileRoutesById {
   "/_main/old/": typeof MainOldIndexRoute;
   "/_main/projects/": typeof MainProjectsIndexRoute;
   "/_main/toybox/": typeof MainToyboxIndexRoute;
+  "/_redirects/bogey/": typeof RedirectsBogeyIndexRoute;
   "/_main/projects/p/hackgwinnett-web": typeof MainProjectsPHackgwinnettWebRoute;
   "/_main/projects/p/notion-cms-demo": typeof MainProjectsPNotionCmsDemoRoute;
 }
@@ -155,6 +164,7 @@ export interface FileRouteTypes {
     | "/old/"
     | "/projects/"
     | "/toybox/"
+    | "/bogey/"
     | "/projects/p/hackgwinnett-web"
     | "/projects/p/notion-cms-demo";
   fileRoutesByTo: FileRoutesByTo;
@@ -170,6 +180,7 @@ export interface FileRouteTypes {
     | "/old"
     | "/projects"
     | "/toybox"
+    | "/bogey"
     | "/projects/p/hackgwinnett-web"
     | "/projects/p/notion-cms-demo";
   id:
@@ -186,6 +197,7 @@ export interface FileRouteTypes {
     | "/_main/old/"
     | "/_main/projects/"
     | "/_main/toybox/"
+    | "/_redirects/bogey/"
     | "/_main/projects/p/hackgwinnett-web"
     | "/_main/projects/p/notion-cms-demo";
   fileRoutesById: FileRoutesById;
@@ -198,6 +210,7 @@ export interface RootRouteChildren {
   RedirectsRSlugRoute: typeof RedirectsRSlugRoute;
   RedirectsWithgcpsSplatRoute: typeof RedirectsWithgcpsSplatRoute;
   AliasesConnectIndexRoute: typeof AliasesConnectIndexRoute;
+  RedirectsBogeyIndexRoute: typeof RedirectsBogeyIndexRoute;
 }
 
 declare module "@tanstack/react-router" {
@@ -272,6 +285,13 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof MainToyboxIndexRouteImport;
       parentRoute: typeof MainRouteRoute;
     };
+    "/_redirects/bogey/": {
+      id: "/_redirects/bogey/";
+      path: "/bogey";
+      fullPath: "/bogey/";
+      preLoaderRoute: typeof RedirectsBogeyIndexRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
     "/_redirects/r/$slug": {
       id: "/_redirects/r/$slug";
       path: "/r/$slug";
@@ -343,7 +363,17 @@ const rootRouteChildren: RootRouteChildren = {
   RedirectsRSlugRoute: RedirectsRSlugRoute,
   RedirectsWithgcpsSplatRoute: RedirectsWithgcpsSplatRoute,
   AliasesConnectIndexRoute: AliasesConnectIndexRoute,
+  RedirectsBogeyIndexRoute: RedirectsBogeyIndexRoute,
 };
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>();
+
+import type { getRouter } from "./router.tsx";
+import type { createStart } from "@tanstack/react-start";
+declare module "@tanstack/react-start" {
+  interface Register {
+    ssr: true;
+    router: Awaited<ReturnType<typeof getRouter>>;
+  }
+}
