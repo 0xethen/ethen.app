@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from "./routes/index";
 import { Route as MainRouteRouteImport } from "./routes/_main/route";
 import { Route as LegalIndexRouteImport } from "./routes/legal/index";
 import { Route as MarketingSitesHgmPrivacyRouteImport } from "./routes/marketing-sites/hgm-privacy";
+import { Route as RandomheatIndexRouteImport } from "./routes/randomheat.index";
 import { Route as AliasesConnectIndexRouteImport } from "./routes/_aliases/connect.index";
 import { Route as MainContactIndexRouteImport } from "./routes/_main/contact.index";
 import { Route as MainOldIndexRouteImport } from "./routes/_main/old.index";
@@ -42,6 +43,11 @@ const LegalIndexRoute = LegalIndexRouteImport.update({
 const MarketingSitesHgmPrivacyRoute = MarketingSitesHgmPrivacyRouteImport.update({
   id: "/marketing-sites/hgm-privacy",
   path: "/marketing-sites/hgm-privacy",
+  getParentRoute: () => rootRouteImport,
+} as any);
+const RandomheatIndexRoute = RandomheatIndexRouteImport.update({
+  id: "/randomheat/",
+  path: "/randomheat/",
   getParentRoute: () => rootRouteImport,
 } as any);
 const AliasesConnectIndexRoute = AliasesConnectIndexRouteImport.update({
@@ -104,6 +110,7 @@ export interface FileRoutesByFullPath {
   "/": typeof IndexRoute;
   "/marketing-sites/hgm-privacy": typeof MarketingSitesHgmPrivacyRoute;
   "/legal/": typeof LegalIndexRoute;
+  "/randomheat/": typeof RandomheatIndexRoute;
   "/projects/p": typeof MainProjectsPRouteRouteWithChildren;
   "/r/$slug": typeof RedirectsRSlugRoute;
   "/withgcps/$": typeof RedirectsWithgcpsSplatRoute;
@@ -120,6 +127,7 @@ export interface FileRoutesByTo {
   "/": typeof IndexRoute;
   "/marketing-sites/hgm-privacy": typeof MarketingSitesHgmPrivacyRoute;
   "/legal": typeof LegalIndexRoute;
+  "/randomheat": typeof RandomheatIndexRoute;
   "/projects/p": typeof MainProjectsPRouteRouteWithChildren;
   "/r/$slug": typeof RedirectsRSlugRoute;
   "/withgcps/$": typeof RedirectsWithgcpsSplatRoute;
@@ -138,6 +146,7 @@ export interface FileRoutesById {
   "/_main": typeof MainRouteRouteWithChildren;
   "/marketing-sites/hgm-privacy": typeof MarketingSitesHgmPrivacyRoute;
   "/legal/": typeof LegalIndexRoute;
+  "/randomheat/": typeof RandomheatIndexRoute;
   "/_main/projects/p": typeof MainProjectsPRouteRouteWithChildren;
   "/_redirects/r/$slug": typeof RedirectsRSlugRoute;
   "/_redirects/withgcps/$": typeof RedirectsWithgcpsSplatRoute;
@@ -156,6 +165,7 @@ export interface FileRouteTypes {
     | "/"
     | "/marketing-sites/hgm-privacy"
     | "/legal/"
+    | "/randomheat/"
     | "/projects/p"
     | "/r/$slug"
     | "/withgcps/$"
@@ -172,6 +182,7 @@ export interface FileRouteTypes {
     | "/"
     | "/marketing-sites/hgm-privacy"
     | "/legal"
+    | "/randomheat"
     | "/projects/p"
     | "/r/$slug"
     | "/withgcps/$"
@@ -189,6 +200,7 @@ export interface FileRouteTypes {
     | "/_main"
     | "/marketing-sites/hgm-privacy"
     | "/legal/"
+    | "/randomheat/"
     | "/_main/projects/p"
     | "/_redirects/r/$slug"
     | "/_redirects/withgcps/$"
@@ -207,6 +219,7 @@ export interface RootRouteChildren {
   MainRouteRoute: typeof MainRouteRouteWithChildren;
   MarketingSitesHgmPrivacyRoute: typeof MarketingSitesHgmPrivacyRoute;
   LegalIndexRoute: typeof LegalIndexRoute;
+  RandomheatIndexRoute: typeof RandomheatIndexRoute;
   RedirectsRSlugRoute: typeof RedirectsRSlugRoute;
   RedirectsWithgcpsSplatRoute: typeof RedirectsWithgcpsSplatRoute;
   AliasesConnectIndexRoute: typeof AliasesConnectIndexRoute;
@@ -241,6 +254,13 @@ declare module "@tanstack/react-router" {
       path: "/marketing-sites/hgm-privacy";
       fullPath: "/marketing-sites/hgm-privacy";
       preLoaderRoute: typeof MarketingSitesHgmPrivacyRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/randomheat/": {
+      id: "/randomheat/";
+      path: "/randomheat";
+      fullPath: "/randomheat/";
+      preLoaderRoute: typeof RandomheatIndexRouteImport;
       parentRoute: typeof rootRouteImport;
     };
     "/_aliases/connect/": {
@@ -360,6 +380,7 @@ const rootRouteChildren: RootRouteChildren = {
   MainRouteRoute: MainRouteRouteWithChildren,
   MarketingSitesHgmPrivacyRoute: MarketingSitesHgmPrivacyRoute,
   LegalIndexRoute: LegalIndexRoute,
+  RandomheatIndexRoute: RandomheatIndexRoute,
   RedirectsRSlugRoute: RedirectsRSlugRoute,
   RedirectsWithgcpsSplatRoute: RedirectsWithgcpsSplatRoute,
   AliasesConnectIndexRoute: AliasesConnectIndexRoute,

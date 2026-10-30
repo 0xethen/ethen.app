@@ -1,9 +1,11 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 
 const redirects: Record<string, string> = {
-  fullstack: "https://github.com/hackgwinnett/workshops",
+  fullstack:
+    "https://stackblitz.com/github/hackgwinnett/workshops/tree/main/events/hackathon/hg6/fullstack-development",
   nsbea:
     "/withGCPS/https://docs.google.com/forms/d/e/1FAIpQLSfA5C7ks0cOOiVBo37Aw2V2Kc9vAZiGCfDZac_D9m7C80-F4Q/viewform",
+  shirtqr: "/randomheat",
 };
 
 const to = (href: string) => {
