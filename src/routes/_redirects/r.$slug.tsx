@@ -7,7 +7,7 @@ const redirects: Record<string, string> = {
     "https://codesandbox.io/p/devbox/github/hackgwinnett/workshops/main/events/hackathon/hg6/fullstack-development",
   fullstackgh:
     "https://github.com/hackgwinnett/workshops/tree/main/events/hackathon/hg6/fullstack-development",
-  fsattendance:
+  fstacka:
     "https://docs.google.com/forms/d/e/1FAIpQLSdrubCasclDRKro5imylsB1zlUW6cKrwQWAvjZpbHG0Bb9tzg/viewform",
   nsbea:
     "/withGCPS/https://docs.google.com/forms/d/e/1FAIpQLSfA5C7ks0cOOiVBo37Aw2V2Kc9vAZiGCfDZac_D9m7C80-F4Q/viewform",
