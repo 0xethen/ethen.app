@@ -2,6 +2,8 @@ import { createFileRoute, notFound } from "@tanstack/react-router";
 
 const redirects: Record<string, string> = {
   fullstack:
+    "https://stackblitz.com/github/hackgwinnett/workshops/tree/main/events/hackathon/hg6/fullstack-development",
+  fullstackcs:
     "https://codesandbox.io/p/devbox/github/hackgwinnett/workshops/main/events/hackathon/hg6/fullstack-development",
   fullstackgh:
     "https://github.com/hackgwinnett/workshops/tree/main/events/hackathon/hg6/fullstack-development",
